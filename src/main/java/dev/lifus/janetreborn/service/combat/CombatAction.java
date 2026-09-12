@@ -1,0 +1,17 @@
+package dev.lifus.janetreborn.service.combat;
+
+public enum CombatAction {
+  TRIGGERBOT,
+  SHIELD_DISABLE,
+  CRYSTAL_SEQUENCE,
+  CRYSTAL_ASSIST,
+  TOTEM_SAFETY,
+  ANCHOR_SEQUENCE,
+  WEB,
+  AUTO_LAVA_PLACE,
+  AUTO_LAVA_PICKUP,
+  AUTO_WATER_PLACE,
+  AUTO_WATER_PICKUP,
+  DRAIN,
+  SCRIPT
+}

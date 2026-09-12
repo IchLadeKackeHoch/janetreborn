@@ -1,0 +1,31 @@
+{
+  "renameClass": {
+    "annotation": [
+      "org/spongepowered/asm/mixin/Mixin"
+    ]
+  },
+  "renameMethod": {
+    "class": [
+      "dev/lifus/janetreborn/event/Listener",
+      "dev/lifus/janetreborn/ui/PostFxConfig",
+      "dev/lifus/janetreborn/service/rotation/Rotations$Configuration"
+    ]
+  },
+  "methodSalting": {
+    "class": [
+      "dev/lifus/janetreborn/event/Listener",
+      "dev/lifus/janetreborn/ui/PostFxConfig",
+      "dev/lifus/janetreborn/service/rotation/Rotations$Configuration"
+    ]
+  },
+  "trim": {
+    "annotation": [
+      "dev/lifus/janetreborn/event/Subscribe"
+    ]
+  },
+  "flowInts": {
+    "annotation": [
+      "org/spongepowered/asm/mixin/Mixin"
+    ]
+  }
+}

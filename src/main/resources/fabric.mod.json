@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "janet_reborn",
+  "version": "${version}",
+  "name": "Janet Reborn",
+  "description": "Janet Reborn Minecraft client.",
+  "license": "CC0-1.0",
+  "icon": "assets/janet_reborn/icon.png",
+  "environment": "client",
+  "mixins": ["janet_reborn.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~26.2",
+    "java": ">=25"
+  }
+}

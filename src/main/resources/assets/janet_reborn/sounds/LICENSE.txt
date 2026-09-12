@@ -1,0 +1,8 @@
+Simple Happy Beep.ogg
+Author: waveplaySFX
+Source: https://freesound.org/people/waveplaySFX/sounds/518147/
+Mirror: https://commons.wikimedia.org/wiki/File:Simple_Happy_Beep.ogg
+License: CC0 1.0 Universal (public-domain dedication)
+License text: https://creativecommons.org/publicdomain/zero/1.0/
+
+Bundled as warner_low_health.ogg for Janet Reborn's Warner module.

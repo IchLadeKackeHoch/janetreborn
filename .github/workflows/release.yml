@@ -1,0 +1,63 @@
+name: release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: read
+
+env:
+  RELEASE_REPOSITORY: lifusdev/uhcheat-releases
+
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v6
+      - name: validate gradle wrapper
+        uses: gradle/actions/wrapper-validation@v6
+      - name: setup jdk
+        uses: actions/setup-java@v5
+        with:
+          java-version: '25'
+          distribution: 'microsoft'
+      - name: make gradle wrapper executable
+        run: chmod +x ./gradlew
+      - name: build
+        run: ./gradlew build
+      - name: prepare release files
+        shell: bash
+        run: |
+          version="$(sed -n 's/^mod_version=//p' gradle.properties | tr -d '\r')"
+          if [[ "v${version}" != "${GITHUB_REF_NAME}" ]]; then
+            echo "Tag ${GITHUB_REF_NAME} does not match mod version ${version}."
+            exit 1
+          fi
+          mkdir -p release
+          jar="$(find build/libs -maxdepth 1 -type f -name '*.jar' ! -name '*-sources.jar' -print -quit)"
+          if [[ -z "${jar}" ]]; then
+            echo "No client JAR was built."
+            exit 1
+          fi
+          cp "${jar}" release/janet-reborn.jar
+          sha256sum release/janet-reborn.jar | awk '{print $1}' > release/janet-reborn.jar.sha256
+      - name: publish public GitHub release
+        env:
+          GH_TOKEN: ${{ secrets.PUBLIC_RELEASE_TOKEN }}
+        shell: bash
+        run: |
+          visibility="$(gh repo view "${RELEASE_REPOSITORY}" --json visibility --jq '.visibility')"
+          if [[ "${visibility}" != "PUBLIC" ]]; then
+            echo "${RELEASE_REPOSITORY} must be public."
+            exit 1
+          fi
+          gh release create "${GITHUB_REF_NAME}" \
+            release/janet-reborn.jar \
+            release/janet-reborn.jar.sha256 \
+            --repo "${RELEASE_REPOSITORY}" \
+            --target main \
+            --generate-notes \
+            --title "Janet Reborn ${GITHUB_REF_NAME#v}"

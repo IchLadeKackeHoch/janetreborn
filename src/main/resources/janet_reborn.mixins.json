@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "dev.lifus.janetreborn.platform.minecraft.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": ["AbstractContainerScreenAccessor", "AvatarRendererMixin", "ClientCommonPacketListenerMixin", "ClientInputAccessor", "ClientPacketListenerMixin", "FramerateLimitTrackerMixin", "KeyboardHandlerMixin", "LivingEntityRendererAccessor", "LocalPlayerMixin", "MinecraftAccessor", "MinecraftMixin", "MouseHandlerMixin", "MultiPlayerGameModeMixin"],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}

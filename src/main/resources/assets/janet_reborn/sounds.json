@@ -1,0 +1,5 @@
+{
+  "warner_low_health": {
+    "sounds": ["janet_reborn:warner_low_health"]
+  }
+}
