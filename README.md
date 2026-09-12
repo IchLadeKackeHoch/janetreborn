@@ -50,5 +50,5 @@ You may skid the code, modify it, rebrand it, redistribute it, use it in your ow
 **No permission or attribution is required**. Do whatever you want with it! 🤑
 
 # PREVIEW
-<img width="1919" height="1079" alt="Screenshot 2026-07-17 221336" src="https://github.com/user-attachments/assets/f6ca7fa6-0065-4488-82eb-a6a8caa6fccc" />
+<img width="1919" height="1079" alt="Screenshot 2026-07-17 221336" src="https://github.com/user-attachments/assets/c25c4a7f-965d-4be3-ad4a-149a205d84c2" />
 
